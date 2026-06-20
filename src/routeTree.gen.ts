@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndexRouteImport } from './routes/index'
@@ -18,7 +19,13 @@ import { Route as DashboardResultsRouteImport } from './routes/dashboard.results
 import { Route as DashboardFeesRouteImport } from './routes/dashboard.fees'
 import { Route as DashboardAttendanceRouteImport } from './routes/dashboard.attendance'
 import { Route as DashboardAdminRouteImport } from './routes/dashboard.admin'
+import { Route as BlogWhatIsSisRouteImport } from './routes/blog.what-is-sis'
 
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const LoginRoute = LoginRouteImport.update({
   id: '/login',
   path: '/login',
@@ -64,11 +71,18 @@ const DashboardAdminRoute = DashboardAdminRouteImport.update({
   path: '/dashboard/admin',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogWhatIsSisRoute = BlogWhatIsSisRouteImport.update({
+  id: '/blog/what-is-sis',
+  path: '/blog/what-is-sis',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/login': typeof LoginRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/blog/what-is-sis': typeof BlogWhatIsSisRoute
   '/dashboard/admin': typeof DashboardAdminRoute
   '/dashboard/attendance': typeof DashboardAttendanceRoute
   '/dashboard/fees': typeof DashboardFeesRoute
@@ -80,6 +94,8 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/login': typeof LoginRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/blog/what-is-sis': typeof BlogWhatIsSisRoute
   '/dashboard/admin': typeof DashboardAdminRoute
   '/dashboard/attendance': typeof DashboardAttendanceRoute
   '/dashboard/fees': typeof DashboardFeesRoute
@@ -92,6 +108,8 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/login': typeof LoginRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/blog/what-is-sis': typeof BlogWhatIsSisRoute
   '/dashboard/admin': typeof DashboardAdminRoute
   '/dashboard/attendance': typeof DashboardAttendanceRoute
   '/dashboard/fees': typeof DashboardFeesRoute
@@ -105,6 +123,8 @@ export interface FileRouteTypes {
     | '/'
     | '/contact'
     | '/login'
+    | '/sitemap.xml'
+    | '/blog/what-is-sis'
     | '/dashboard/admin'
     | '/dashboard/attendance'
     | '/dashboard/fees'
@@ -116,6 +136,8 @@ export interface FileRouteTypes {
     | '/'
     | '/contact'
     | '/login'
+    | '/sitemap.xml'
+    | '/blog/what-is-sis'
     | '/dashboard/admin'
     | '/dashboard/attendance'
     | '/dashboard/fees'
@@ -127,6 +149,8 @@ export interface FileRouteTypes {
     | '/'
     | '/contact'
     | '/login'
+    | '/sitemap.xml'
+    | '/blog/what-is-sis'
     | '/dashboard/admin'
     | '/dashboard/attendance'
     | '/dashboard/fees'
@@ -139,6 +163,8 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContactRoute: typeof ContactRoute
   LoginRoute: typeof LoginRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  BlogWhatIsSisRoute: typeof BlogWhatIsSisRoute
   DashboardAdminRoute: typeof DashboardAdminRoute
   DashboardAttendanceRoute: typeof DashboardAttendanceRoute
   DashboardFeesRoute: typeof DashboardFeesRoute
@@ -149,6 +175,13 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/login': {
       id: '/login'
       path: '/login'
@@ -212,6 +245,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DashboardAdminRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog/what-is-sis': {
+      id: '/blog/what-is-sis'
+      path: '/blog/what-is-sis'
+      fullPath: '/blog/what-is-sis'
+      preLoaderRoute: typeof BlogWhatIsSisRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -219,6 +259,8 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContactRoute: ContactRoute,
   LoginRoute: LoginRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
+  BlogWhatIsSisRoute: BlogWhatIsSisRoute,
   DashboardAdminRoute: DashboardAdminRoute,
   DashboardAttendanceRoute: DashboardAttendanceRoute,
   DashboardFeesRoute: DashboardFeesRoute,
@@ -229,13 +271,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
