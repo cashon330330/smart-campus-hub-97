@@ -25,14 +25,28 @@ import {
 import { courses, enrollmentByDept, students } from "@/lib/mock-data";
 
 export const Route = createFileRoute("/dashboard/teacher")({
-  head: () => ({ meta: [{ title: "Teacher dashboard — SMS" }] }),
+  head: () => ({
+    meta: [
+      { title: "Teacher Dashboard — Student Management System" },
+      {
+        name: "description",
+        content:
+          "Teacher dashboard for managing classes, students, attendance, and grades with quick actions for announcements and uploading marks.",
+      },
+      { property: "og:title", content: "Teacher Dashboard — Student Management System" },
+      { property: "og:description", content: "Manage your classes, students, attendance, and grades." },
+      { property: "og:url", content: "https://smart-campus-hub-97.lovable.app/dashboard/teacher" },
+      { property: "og:type", content: "website" },
+    ],
+    links: [{ rel: "canonical", href: "https://smart-campus-hub-97.lovable.app/dashboard/teacher" }],
+  }),
   component: TeacherDashboard,
 });
 
 function TeacherDashboard() {
   return (
     <DashboardShell
-      title="Good morning, Dr. Voss"
+      title="Teacher Dashboard — Good morning, Dr. Voss"
       subtitle="You have 4 classes today and 12 assignments to review."
       actions={
         <>
