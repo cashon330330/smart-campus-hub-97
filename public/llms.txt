@@ -1,0 +1,18 @@
+# Student Management System (SMS)
+
+> A modern, all-in-one student management platform for colleges and universities — covering attendance, grades, fees, analytics, and role-based portals for students, teachers, and administrators.
+
+SMS helps campuses replace spreadsheets and legacy SIS tools with a single, beautifully designed system. It provides QR-based attendance, GPA-aware results, invoicing and fee tracking, real-time analytics, and dedicated portals for each role.
+
+## Pages
+
+- [Home](/): Product overview, features, statistics, and testimonials.
+- [Contact](/contact): Talk to the team about pricing, onboarding, or a custom campus deployment.
+
+## Guides
+
+- [What is a Student Information System (SIS)?](/blog/what-is-sis): A comprehensive guide explaining what a SIS is, what it does, and how it improves campus efficiency and student success.
+
+## Optional
+
+- [Sign in](/login): Role-based sign in for students, teachers, and administrators (demo).

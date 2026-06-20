@@ -30,6 +30,7 @@ export function MarketingFooter() {
         <div>
           <h4 className="font-display text-sm font-semibold">Company</h4>
           <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
+            <li><Link to="/blog/what-is-sis" className="hover:text-foreground">What is a SIS?</Link></li>
             <li><Link to="/contact" className="hover:text-foreground">Contact</Link></li>
             <li><Link to="/login" className="hover:text-foreground">Sign in</Link></li>
           </ul>
@@ -38,9 +39,9 @@ export function MarketingFooter() {
         <div>
           <h4 className="font-display text-sm font-semibold">Get in touch</h4>
           <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
-            <li className="flex items-start gap-2"><Mail className="mt-0.5 h-4 w-4 text-primary" /> hello@smartsms.edu</li>
-            <li className="flex items-start gap-2"><Phone className="mt-0.5 h-4 w-4 text-primary" /> +1 (415) 555-0142</li>
-            <li className="flex items-start gap-2"><MapPin className="mt-0.5 h-4 w-4 text-primary" /> 220 Bryant St, San Francisco</li>
+            <li className="flex items-start gap-2"><Mail className="mt-0.5 h-4 w-4 text-primary" aria-hidden="true" /> hello@sms.edu</li>
+            <li className="flex items-start gap-2"><Phone className="mt-0.5 h-4 w-4 text-primary" aria-hidden="true" /> +1 (415) 555-0142</li>
+            <li className="flex items-start gap-2"><MapPin className="mt-0.5 h-4 w-4 text-primary" aria-hidden="true" /> 220 Bryant St, San Francisco</li>
           </ul>
         </div>
       </div>

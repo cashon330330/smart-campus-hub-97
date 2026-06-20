@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /dashboard/
+
+Sitemap: https://smart-campus-hub-97.lovable.app/sitemap.xml

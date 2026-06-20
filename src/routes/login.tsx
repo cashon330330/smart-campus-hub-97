@@ -68,12 +68,12 @@ function LoginPage() {
             <h2 className="font-display text-4xl font-bold leading-tight">
               One login. <br /> Three portals. <br /> Zero friction.
             </h2>
-            <p className="mt-4 max-w-md text-primary-foreground/80">
+            <p className="mt-4 max-w-md text-primary-foreground/95">
               Securely access your role-based dashboard with everything you need to learn,
               teach, or run a modern campus.
             </p>
           </div>
-          <p className="text-sm text-primary-foreground/70">© Student Management System</p>
+          <p className="text-sm text-primary-foreground/90">© Student Management System</p>
         </div>
       </div>
 
