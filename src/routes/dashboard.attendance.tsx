@@ -33,7 +33,21 @@ import {
 import { attendanceTrend, students } from "@/lib/mock-data";
 
 export const Route = createFileRoute("/dashboard/attendance")({
-  head: () => ({ meta: [{ title: "Attendance — SMS" }] }),
+  head: () => ({
+    meta: [
+      { title: "Attendance — Student Management System" },
+      {
+        name: "description",
+        content:
+          "Mark today's class attendance, view historical trends, and export attendance reports for students and courses.",
+      },
+      { property: "og:title", content: "Attendance — Student Management System" },
+      { property: "og:description", content: "Mark class attendance and view trends and reports." },
+      { property: "og:url", content: "https://smart-campus-hub-97.lovable.app/dashboard/attendance" },
+      { property: "og:type", content: "website" },
+    ],
+    links: [{ rel: "canonical", href: "https://smart-campus-hub-97.lovable.app/dashboard/attendance" }],
+  }),
   component: AttendancePage,
 });
 

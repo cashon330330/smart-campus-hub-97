@@ -17,7 +17,21 @@ import {
 import { feeHistory } from "@/lib/mock-data";
 
 export const Route = createFileRoute("/dashboard/fees")({
-  head: () => ({ meta: [{ title: "Fees — SMS" }] }),
+  head: () => ({
+    meta: [
+      { title: "Fees — Student Management System" },
+      {
+        name: "description",
+        content:
+          "View fee status by semester, track payment history, and issue invoices or send reminders to students automatically.",
+      },
+      { property: "og:title", content: "Fees — Student Management System" },
+      { property: "og:description", content: "Fee status, invoices, and payment history." },
+      { property: "og:url", content: "https://smart-campus-hub-97.lovable.app/dashboard/fees" },
+      { property: "og:type", content: "website" },
+    ],
+    links: [{ rel: "canonical", href: "https://smart-campus-hub-97.lovable.app/dashboard/fees" }],
+  }),
   component: FeesPage,
 });
 
