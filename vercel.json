@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/(((?!api|assets|static|_next|_vercel).*)|\uf8ff)",
+      "destination": "/"
+    }
+  ]
+}
