@@ -90,21 +90,26 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content:
           "Complete student management solution for colleges and universities — attendance, results, fees, and analytics in one modern dashboard.",
       },
-      { property: "og:title", content: "Student Management System" },
-      {
-        property: "og:description",
-        content: "Complete student management solution for colleges and universities.",
-      },
+      { property: "og:site_name", content: "Student Management System" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Student Management System" },
-      { name: "description", content: "A smart student management system website for colleges and universities." },
-      { property: "og:description", content: "A smart student management system website for colleges and universities." },
-      { name: "twitter:description", content: "A smart student management system website for colleges and universities." },
       { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/874d1cc3-d4df-41ce-8289-c70736f735b1/id-preview-4ae67ad2--b83f836b-5265-421e-bc48-2ebb1e2262f6.lovable.app-1781872939264.png" },
       { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/874d1cc3-d4df-41ce-8289-c70736f735b1/id-preview-4ae67ad2--b83f836b-5265-421e-bc48-2ebb1e2262f6.lovable.app-1781872939264.png" },
     ],
     links: [{ rel: "stylesheet", href: appCss }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "Student Management System",
+          url: "https://smart-campus-hub-97.lovable.app",
+          description:
+            "Modern student management platform for colleges and universities covering attendance, results, fees, and analytics.",
+        }),
+      },
+    ],
   }),
   shellComponent: RootShell,
   component: RootComponent,

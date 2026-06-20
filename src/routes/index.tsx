@@ -28,10 +28,27 @@ export const Route = createFileRoute("/")({
         content:
           "Modern, all-in-one student management for colleges: attendance, results, fees, analytics, and role-based portals for students, teachers, and admins.",
       },
-      { property: "og:title", content: "Student Management System" },
+      { property: "og:title", content: "Student Management System — Complete Solution" },
       {
         property: "og:description",
-        content: "The modern student management platform built for colleges that care about clarity.",
+        content:
+          "Modern, all-in-one student management for colleges: attendance, results, fees, analytics, and role-based portals.",
+      },
+      { property: "og:url", content: "https://smart-campus-hub-97.lovable.app/" },
+      { property: "og:type", content: "website" },
+    ],
+    links: [{ rel: "canonical", href: "https://smart-campus-hub-97.lovable.app/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: "Student Management System",
+          url: "https://smart-campus-hub-97.lovable.app/",
+          description:
+            "All-in-one student management platform for colleges with attendance, grades, fees, and analytics.",
+        }),
       },
     ],
   }),
