@@ -13,8 +13,39 @@ import { Card } from "@/components/ui/card";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — SMS" },
-      { name: "description", content: "Get in touch with the Student Management System team." },
+      { title: "Contact — Student Management System" },
+      {
+        name: "description",
+        content:
+          "Get in touch with the Student Management System team for pricing, onboarding, demos, or a custom deployment for your campus.",
+      },
+      { property: "og:title", content: "Contact — Student Management System" },
+      {
+        property: "og:description",
+        content: "Talk to our team about pricing, onboarding, or a custom campus deployment.",
+      },
+      { property: "og:url", content: "https://smart-campus-hub-97.lovable.app/contact" },
+      { property: "og:type", content: "website" },
+    ],
+    links: [{ rel: "canonical", href: "https://smart-campus-hub-97.lovable.app/contact" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          name: "Contact — Student Management System",
+          url: "https://smart-campus-hub-97.lovable.app/contact",
+          contactPoint: {
+            "@type": "ContactPoint",
+            contactType: "customer support",
+            email: "hello@sms.edu",
+            telephone: "+1-415-555-0142",
+            areaServed: "Worldwide",
+            availableLanguage: ["English"],
+          },
+        }),
+      },
     ],
   }),
   component: ContactPage,

@@ -25,14 +25,28 @@ import {
 import { courses, enrollmentByDept, students } from "@/lib/mock-data";
 
 export const Route = createFileRoute("/dashboard/teacher")({
-  head: () => ({ meta: [{ title: "Teacher dashboard — SMS" }] }),
+  head: () => ({
+    meta: [
+      { title: "Teacher Dashboard — Student Management System" },
+      {
+        name: "description",
+        content:
+          "Teacher dashboard for managing classes, students, attendance, and grades with quick actions for announcements and uploading marks.",
+      },
+      { property: "og:title", content: "Teacher Dashboard — Student Management System" },
+      { property: "og:description", content: "Manage your classes, students, attendance, and grades." },
+      { property: "og:url", content: "https://smart-campus-hub-97.lovable.app/dashboard/teacher" },
+      { property: "og:type", content: "website" },
+    ],
+    links: [{ rel: "canonical", href: "https://smart-campus-hub-97.lovable.app/dashboard/teacher" }],
+  }),
   component: TeacherDashboard,
 });
 
 function TeacherDashboard() {
   return (
     <DashboardShell
-      title="Good morning, Dr. Voss"
+      title="Teacher Dashboard — Good morning, Dr. Voss"
       subtitle="You have 4 classes today and 12 assignments to review."
       actions={
         <>
@@ -67,7 +81,7 @@ function TeacherDashboard() {
 
       <div className="mt-6 grid gap-6 lg:grid-cols-3">
         <Card className="border-border/60 p-6 lg:col-span-2">
-          <h3 className="font-display text-lg font-semibold">Enrollment by department</h3>
+          <h2 className="font-display text-lg font-semibold">Enrollment by department</h2>
           <p className="text-xs text-muted-foreground">Students you've taught across departments</p>
           <div className="mt-4 h-72">
             <ResponsiveContainer width="100%" height="100%">
@@ -91,7 +105,7 @@ function TeacherDashboard() {
 
         <Card className="border-border/60 p-6">
           <div className="flex items-center justify-between">
-            <h3 className="font-display text-lg font-semibold">My courses</h3>
+            <h2 className="font-display text-lg font-semibold">My courses</h2>
             <Button variant="ghost" size="icon"><Plus className="h-4 w-4" /></Button>
           </div>
           <ul className="mt-4 space-y-3">
@@ -112,7 +126,7 @@ function TeacherDashboard() {
       <Card className="mt-6 border-border/60 p-0">
         <div className="flex items-center justify-between border-b border-border/60 p-5">
           <div>
-            <h3 className="font-display text-lg font-semibold">My students</h3>
+            <h2 className="font-display text-lg font-semibold">My students</h2>
             <p className="text-xs text-muted-foreground">Manage attendance and grades</p>
           </div>
           <Button size="sm" variant="outline">Export</Button>

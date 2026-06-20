@@ -11,9 +11,21 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 export const Route = createFileRoute("/login")({
   head: () => ({
     meta: [
-      { title: "Sign in — SMS" },
-      { name: "description", content: "Sign in to your Student Management System portal." },
+      { title: "Sign in — Student Management System" },
+      {
+        name: "description",
+        content:
+          "Sign in to your Student Management System portal as a student, teacher, or administrator to access dashboards, grades, and fees.",
+      },
+      { property: "og:title", content: "Sign in — Student Management System" },
+      {
+        property: "og:description",
+        content: "Role-based sign in for students, teachers, and administrators.",
+      },
+      { property: "og:url", content: "https://smart-campus-hub-97.lovable.app/login" },
+      { property: "og:type", content: "website" },
     ],
+    links: [{ rel: "canonical", href: "https://smart-campus-hub-97.lovable.app/login" }],
   }),
   component: LoginPage,
 });

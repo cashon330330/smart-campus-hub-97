@@ -49,7 +49,21 @@ import {
 import { attendanceTrend, gradeDistribution, stats, students } from "@/lib/mock-data";
 
 export const Route = createFileRoute("/dashboard/admin")({
-  head: () => ({ meta: [{ title: "Admin dashboard — SMS" }] }),
+  head: () => ({
+    meta: [
+      { title: "Admin Dashboard — Student Management System" },
+      {
+        name: "description",
+        content:
+          "Admin dashboard with KPIs across enrollment, attendance, grade distribution, and a searchable student management table.",
+      },
+      { property: "og:title", content: "Admin Dashboard — Student Management System" },
+      { property: "og:description", content: "Manage students, view KPIs, and review institution-wide analytics." },
+      { property: "og:url", content: "https://smart-campus-hub-97.lovable.app/dashboard/admin" },
+      { property: "og:type", content: "website" },
+    ],
+    links: [{ rel: "canonical", href: "https://smart-campus-hub-97.lovable.app/dashboard/admin" }],
+  }),
   component: AdminDashboard,
 });
 

@@ -26,7 +26,21 @@ import {
 import { results, gradeDistribution } from "@/lib/mock-data";
 
 export const Route = createFileRoute("/dashboard/results")({
-  head: () => ({ meta: [{ title: "Results — SMS" }] }),
+  head: () => ({
+    meta: [
+      { title: "Results — Student Management System" },
+      {
+        name: "description",
+        content:
+          "Track subject performance, view class grade distribution, and publish result sheets and transcripts for every student.",
+      },
+      { property: "og:title", content: "Results — Student Management System" },
+      { property: "og:description", content: "Track performance, grade distribution, and result sheets." },
+      { property: "og:url", content: "https://smart-campus-hub-97.lovable.app/dashboard/results" },
+      { property: "og:type", content: "website" },
+    ],
+    links: [{ rel: "canonical", href: "https://smart-campus-hub-97.lovable.app/dashboard/results" }],
+  }),
   component: ResultsPage,
 });
 

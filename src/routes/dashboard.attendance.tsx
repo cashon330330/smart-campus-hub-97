@@ -33,7 +33,21 @@ import {
 import { attendanceTrend, students } from "@/lib/mock-data";
 
 export const Route = createFileRoute("/dashboard/attendance")({
-  head: () => ({ meta: [{ title: "Attendance — SMS" }] }),
+  head: () => ({
+    meta: [
+      { title: "Attendance — Student Management System" },
+      {
+        name: "description",
+        content:
+          "Mark today's class attendance, view historical trends, and export attendance reports for students and courses.",
+      },
+      { property: "og:title", content: "Attendance — Student Management System" },
+      { property: "og:description", content: "Mark class attendance and view trends and reports." },
+      { property: "og:url", content: "https://smart-campus-hub-97.lovable.app/dashboard/attendance" },
+      { property: "og:type", content: "website" },
+    ],
+    links: [{ rel: "canonical", href: "https://smart-campus-hub-97.lovable.app/dashboard/attendance" }],
+  }),
   component: AttendancePage,
 });
 
@@ -83,7 +97,7 @@ function AttendancePage() {
       <Card className="mt-6 border-border/60 p-6">
         <div className="flex items-center justify-between">
           <div>
-            <h3 className="font-display text-lg font-semibold">Attendance trend</h3>
+            <h2 className="font-display text-lg font-semibold">Attendance trend</h2>
             <p className="text-xs text-muted-foreground">Monthly rate, last 6 months</p>
           </div>
         </div>
@@ -111,7 +125,7 @@ function AttendancePage() {
       <Card className="mt-6 border-border/60 p-0">
         <div className="grid gap-3 border-b border-border/60 p-5 sm:flex sm:items-center sm:justify-between">
           <div>
-            <h3 className="font-display text-lg font-semibold">Mark attendance</h3>
+            <h2 className="font-display text-lg font-semibold">Mark attendance</h2>
             <p className="text-xs text-muted-foreground">Tap a student to toggle present / absent</p>
           </div>
           <Select value={course} onValueChange={setCourse}>
@@ -179,7 +193,7 @@ function AttendancePage() {
 
       {/* History */}
       <Card className="mt-6 border-border/60 p-6">
-        <h3 className="font-display text-lg font-semibold">Recent records</h3>
+        <h2 className="font-display text-lg font-semibold">Recent records</h2>
         <ul className="mt-4 divide-y divide-border">
           {students.slice(0, 5).map((s) => (
             <li key={s.id} className="flex items-center justify-between py-3">

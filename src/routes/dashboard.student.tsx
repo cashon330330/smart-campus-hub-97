@@ -26,7 +26,21 @@ import { Badge } from "@/components/ui/badge";
 import { attendanceTrend, courses, notifications, results } from "@/lib/mock-data";
 
 export const Route = createFileRoute("/dashboard/student")({
-  head: () => ({ meta: [{ title: "Student dashboard — SMS" }] }),
+  head: () => ({
+    meta: [
+      { title: "Student Dashboard — Student Management System" },
+      {
+        name: "description",
+        content:
+          "Personal student dashboard with GPA, attendance, enrolled courses, recent results, and notifications all in one place.",
+      },
+      { property: "og:title", content: "Student Dashboard — Student Management System" },
+      { property: "og:description", content: "Your courses, grades, attendance, and notifications." },
+      { property: "og:url", content: "https://smart-campus-hub-97.lovable.app/dashboard/student" },
+      { property: "og:type", content: "website" },
+    ],
+    links: [{ rel: "canonical", href: "https://smart-campus-hub-97.lovable.app/dashboard/student" }],
+  }),
   component: StudentDashboard,
 });
 
