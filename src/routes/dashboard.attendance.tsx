@@ -83,7 +83,7 @@ function AttendancePage() {
       <Card className="mt-6 border-border/60 p-6">
         <div className="flex items-center justify-between">
           <div>
-            <h3 className="font-display text-lg font-semibold">Attendance trend</h3>
+            <h2 className="font-display text-lg font-semibold">Attendance trend</h2>
             <p className="text-xs text-muted-foreground">Monthly rate, last 6 months</p>
           </div>
         </div>
@@ -111,7 +111,7 @@ function AttendancePage() {
       <Card className="mt-6 border-border/60 p-0">
         <div className="grid gap-3 border-b border-border/60 p-5 sm:flex sm:items-center sm:justify-between">
           <div>
-            <h3 className="font-display text-lg font-semibold">Mark attendance</h3>
+            <h2 className="font-display text-lg font-semibold">Mark attendance</h2>
             <p className="text-xs text-muted-foreground">Tap a student to toggle present / absent</p>
           </div>
           <Select value={course} onValueChange={setCourse}>
@@ -179,7 +179,7 @@ function AttendancePage() {
 
       {/* History */}
       <Card className="mt-6 border-border/60 p-6">
-        <h3 className="font-display text-lg font-semibold">Recent records</h3>
+        <h2 className="font-display text-lg font-semibold">Recent records</h2>
         <ul className="mt-4 divide-y divide-border">
           {students.slice(0, 5).map((s) => (
             <li key={s.id} className="flex items-center justify-between py-3">
