@@ -1,9 +1,3 @@
 {
-  "installCommand": "npm install --legacy-peer-deps",
-  "rewrites": [
-    {
-      "source": "/(((?!api|assets|static|_next|_vercel).*)|\uf8ff)",
-      "destination": "/"
-    }
-  ]
+  "installCommand": "npm install --legacy-peer-deps"
 }
