@@ -212,7 +212,7 @@ function Home() {
               <h2 className="font-display text-3xl font-bold tracking-tight sm:text-4xl">
                 Ready to modernize your campus?
               </h2>
-              <p className="mt-2 max-w-2xl text-primary-foreground/80">
+              <p className="mt-2 max-w-2xl text-primary-foreground/95">
                 Try SMS free for 30 days. White-glove onboarding included.
               </p>
             </div>
