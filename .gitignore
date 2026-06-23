@@ -1,3 +1,9 @@
+# Environment Variables (secrets — git mein mat dalo!)
+.env
+.env.local
+.env.*.local
+# .env.example is intentionally NOT ignored (safe to commit)
+
 # Logs
 logs
 *.log
