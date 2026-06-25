@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>my-app</title>
+  <!-- CSS link hamesha head tag me hona chahiye -->
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+
+<body>
+  <div id="app">
+    <!-- 1. Modal open karne wala button -->
+    <button id="openModalBtn">Open Modal</button>
+
+    <!-- 2. Main Modal Background Overlay -->
+    <div class="modal-overlay" id="myModal">
+
+      <!-- 3. Modal Box -->
+      <div class="modal-box">
+        <h2>Modal Title</h2>
+        <p>Aapka modal content yahan aayega.</p>
+
+        <!-- 4. Modal close karne wala button -->
+        <button id="closeModalBtn">Close</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Main JavaScript file link -->
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
