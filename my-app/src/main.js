@@ -1,4 +1,4 @@
-import './style.css' // Import style.css sabse upar hona zaroori hai
+import './style.css' // /src/style.css    Import style.css sabse upar hona zaroori hai
 import javascriptLogo from './assets/javascript.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
@@ -56,6 +56,16 @@ document.querySelector('#app').innerHTML = `
 
 <div class="ticks"></div>
 <section id="spacer"></section>
+
+<button id="openModalBtn">Open Modal</button>
+
+<div class="modal-overlay">
+  <div class="modal-box">
+    <h2>Modal Title</h2>
+    <p>Aapka modal content yahan aayega.</p>
+    <button id="closeModalBtn">Close</button>
+  </div>
+</div>
 `
 
 // Vite counter function execute ho raha hai
