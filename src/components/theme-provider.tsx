@@ -3,7 +3,7 @@ import { createContext, useContext, useEffect, useState, type ReactNode } from "
 type Theme = "light" | "dark";
 const ThemeContext = createContext<{ theme: Theme; toggle: () => void }>({
   theme: "light",
-  toggle: () => {},
+  toggle: () => { },
 });
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
@@ -17,6 +17,8 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     const root = document.documentElement;
     root.classList.toggle("dark", theme === "dark");
+    // === YAHAN PASTE KIYA HAI (Line 20) ===
+    root.setAttribute("data-theme", theme);
     localStorage.setItem("theme", theme);
   }, [theme]);
 

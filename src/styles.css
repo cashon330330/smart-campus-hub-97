@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
 
@@ -237,4 +237,45 @@
 
 @utility animate-fade-up {
   animation: fade-up 0.6s ease-out both;
+}
+
+/* === YAHAN SE APNA NEW CODE START HAI (STEP 6) === */
+:root {
+  --bg: var(--background);
+  --fg: var(--foreground);
+}
+
+/* --- STEP 7: SMOOTH ANIMATION CODE --- */
+
+/* 1. Modal container ko smoothly fade karne ke liye */
+.modal-overlay {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 200ms ease-in-out, visibility 200ms ease-in-out;
+}
+
+/* 2. Modal box ko smoothly scale (bada) karne ke liye */
+.modal-box {
+  transform: scale(0.9);
+  transition: transform 200ms ease-in-out;
+}
+
+/* 3. Jab modal active/open ho tab ka effect */
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-overlay.active .modal-box {
+  transform: scale(1);
+}
+
+/* 4. ZAROORI BAAT: Motion sickness wale users ke liye animation off */
+@media (prefers-reduced-motion: reduce) {
+
+  .modal-overlay,
+  .modal-box {
+    transition: none !important;
+    transform: none !important;
+  }
 }

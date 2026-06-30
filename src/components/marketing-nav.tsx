@@ -1,6 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { GraduationCap, Menu, Moon, Sun } from "lucide-react";
+// === YAHAN EDIT KIYA HAI: useState ke saath ContactModal ko jod diya ===
 import { useState } from "react";
+import ContactModal from "./ContactModal";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/components/theme-provider";
 import { cn } from "@/lib/utils";
@@ -8,12 +10,13 @@ import { cn } from "@/lib/utils";
 const links = [
   { to: "/", label: "Home" },
   { to: "/blog/what-is-sis", label: "Guide" },
-  { to: "/contact", label: "Contact" },
 ];
 
 export function MarketingNav() {
   const { theme, toggle } = useTheme();
   const [open, setOpen] = useState(false);
+  // === YAHAN EDIT KIYA HAI: Modal ko kholne/band karne ka switch (State) banaya ===
+  const [isContactOpen, setIsContactOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-40 w-full border-b border-border/60 bg-background/80 backdrop-blur-xl">
@@ -37,6 +40,13 @@ export function MarketingNav() {
               {l.label}
             </Link>
           ))}
+          {/* === YAHAN EDIT KIYA HAI: Normal Desktop screen ke liye Contact Link/Button === */}
+          <button
+            onClick={() => setIsContactOpen(true)}
+            className="cursor-pointer rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+          >
+            Contact
+          </button>
         </nav>
 
         <div className="flex items-center gap-2">
@@ -60,6 +70,8 @@ export function MarketingNav() {
           </Button>
         </div>
       </div>
+
+      {/* Mobile Responsive Menu */}
       <div className={cn("md:hidden border-t border-border/60 bg-background", open ? "block" : "hidden")}>
         <div className="mx-auto flex max-w-7xl flex-col gap-1 px-4 py-3">
           {links.map((l) => (
@@ -72,6 +84,16 @@ export function MarketingNav() {
               {l.label}
             </Link>
           ))}
+          {/* === YAHAN EDIT KIYA HAI: Mobile screen vale menu ke andar Contact option joda === */}
+          <button
+            onClick={() => {
+              setOpen(false);
+              setIsContactOpen(true);
+            }}
+            className="text-left rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-accent hover:text-foreground"
+          >
+            Contact
+          </button>
           <Link to="/login" onClick={() => setOpen(false)} className="rounded-lg px-3 py-2 text-sm font-medium">
             Sign in
           </Link>
@@ -80,6 +102,12 @@ export function MarketingNav() {
           </Link>
         </div>
       </div>
+
+      {/* === YAHAN EDIT KIYA HAI: Contact Modal Popup Component rendering === */}
+      <ContactModal
+        isOpen={isContactOpen}
+        onClose={() => setIsContactOpen(false)}
+      />
     </header>
   );
 }
