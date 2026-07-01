@@ -38,3 +38,8 @@ dist-ssr
 
 # Vercel
 .vercel/
+
+# Recursive cloned project directories
+smart-campus-hub-97/
+**/smart-campus-hub-97/
+

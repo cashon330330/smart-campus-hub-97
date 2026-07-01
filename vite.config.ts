@@ -15,4 +15,10 @@ export default defineConfig({
   nitro: {
     preset: "vercel",
   },
+  vite: {
+    build: {
+      // Suppress chunk size warnings for large vendor bundles
+      chunkSizeWarningLimit: 1000,
+    },
+  },
 });
