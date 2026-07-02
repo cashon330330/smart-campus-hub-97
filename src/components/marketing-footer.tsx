@@ -30,8 +30,6 @@ export function MarketingFooter() {
         <div>
           <h4 className="font-display text-sm font-semibold">Company</h4>
           <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
-            <li><Link to="/blog/what-is-sis" className="hover:text-foreground">What is a SIS?</Link></li>
-            <li><Link to="/contact" className="hover:text-foreground">Contact</Link></li>
             <li><Link to="/login" className="hover:text-foreground">Sign in</Link></li>
           </ul>
         </div>

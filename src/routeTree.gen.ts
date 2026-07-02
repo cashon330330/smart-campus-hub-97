@@ -11,7 +11,6 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as LoginRouteImport } from './routes/login'
-import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as DashboardTeacherRouteImport } from './routes/dashboard.teacher'
 import { Route as DashboardStudentRouteImport } from './routes/dashboard.student'
@@ -19,7 +18,6 @@ import { Route as DashboardResultsRouteImport } from './routes/dashboard.results
 import { Route as DashboardFeesRouteImport } from './routes/dashboard.fees'
 import { Route as DashboardAttendanceRouteImport } from './routes/dashboard.attendance'
 import { Route as DashboardAdminRouteImport } from './routes/dashboard.admin'
-import { Route as BlogWhatIsSisRouteImport } from './routes/blog.what-is-sis'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
@@ -29,11 +27,6 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
 const LoginRoute = LoginRouteImport.update({
   id: '/login',
   path: '/login',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ContactRoute = ContactRouteImport.update({
-  id: '/contact',
-  path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -71,18 +64,11 @@ const DashboardAdminRoute = DashboardAdminRouteImport.update({
   path: '/dashboard/admin',
   getParentRoute: () => rootRouteImport,
 } as any)
-const BlogWhatIsSisRoute = BlogWhatIsSisRouteImport.update({
-  id: '/blog/what-is-sis',
-  path: '/blog/what-is-sis',
-  getParentRoute: () => rootRouteImport,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/contact': typeof ContactRoute
   '/login': typeof LoginRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/blog/what-is-sis': typeof BlogWhatIsSisRoute
   '/dashboard/admin': typeof DashboardAdminRoute
   '/dashboard/attendance': typeof DashboardAttendanceRoute
   '/dashboard/fees': typeof DashboardFeesRoute
@@ -92,10 +78,8 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/contact': typeof ContactRoute
   '/login': typeof LoginRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/blog/what-is-sis': typeof BlogWhatIsSisRoute
   '/dashboard/admin': typeof DashboardAdminRoute
   '/dashboard/attendance': typeof DashboardAttendanceRoute
   '/dashboard/fees': typeof DashboardFeesRoute
@@ -106,10 +90,8 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/contact': typeof ContactRoute
   '/login': typeof LoginRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/blog/what-is-sis': typeof BlogWhatIsSisRoute
   '/dashboard/admin': typeof DashboardAdminRoute
   '/dashboard/attendance': typeof DashboardAttendanceRoute
   '/dashboard/fees': typeof DashboardFeesRoute
@@ -121,10 +103,8 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/contact'
     | '/login'
     | '/sitemap.xml'
-    | '/blog/what-is-sis'
     | '/dashboard/admin'
     | '/dashboard/attendance'
     | '/dashboard/fees'
@@ -134,10 +114,8 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/contact'
     | '/login'
     | '/sitemap.xml'
-    | '/blog/what-is-sis'
     | '/dashboard/admin'
     | '/dashboard/attendance'
     | '/dashboard/fees'
@@ -147,10 +125,8 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
-    | '/contact'
     | '/login'
     | '/sitemap.xml'
-    | '/blog/what-is-sis'
     | '/dashboard/admin'
     | '/dashboard/attendance'
     | '/dashboard/fees'
@@ -161,10 +137,8 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  ContactRoute: typeof ContactRoute
   LoginRoute: typeof LoginRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
-  BlogWhatIsSisRoute: typeof BlogWhatIsSisRoute
   DashboardAdminRoute: typeof DashboardAdminRoute
   DashboardAttendanceRoute: typeof DashboardAttendanceRoute
   DashboardFeesRoute: typeof DashboardFeesRoute
@@ -187,13 +161,6 @@ declare module '@tanstack/react-router' {
       path: '/login'
       fullPath: '/login'
       preLoaderRoute: typeof LoginRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/contact': {
-      id: '/contact'
-      path: '/contact'
-      fullPath: '/contact'
-      preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -245,22 +212,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DashboardAdminRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/blog/what-is-sis': {
-      id: '/blog/what-is-sis'
-      path: '/blog/what-is-sis'
-      fullPath: '/blog/what-is-sis'
-      preLoaderRoute: typeof BlogWhatIsSisRouteImport
-      parentRoute: typeof rootRouteImport
-    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  ContactRoute: ContactRoute,
   LoginRoute: LoginRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
-  BlogWhatIsSisRoute: BlogWhatIsSisRoute,
   DashboardAdminRoute: DashboardAdminRoute,
   DashboardAttendanceRoute: DashboardAttendanceRoute,
   DashboardFeesRoute: DashboardFeesRoute,

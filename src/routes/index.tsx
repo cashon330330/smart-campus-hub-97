@@ -220,9 +220,9 @@ function Home() {
               <Link to="/dashboard/admin">
                 <Button size="lg" variant="secondary">Open dashboard</Button>
               </Link>
-              <Link to="/contact">
+              <Link to="/login">
                 <Button size="lg" variant="outline" className="border-white/40 bg-transparent text-primary-foreground hover:bg-white/10 hover:text-primary-foreground">
-                  Book a demo
+                  Sign in
                 </Button>
               </Link>
             </div>
