@@ -1,22 +1,18 @@
 import { Link } from "@tanstack/react-router";
 import { GraduationCap, Menu, Moon, Sun } from "lucide-react";
-// === YAHAN EDIT KIYA HAI: useState ke saath ContactModal ko jod diya ===
 import { useState } from "react";
-import ContactModal from "./ContactModal";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/components/theme-provider";
 import { cn } from "@/lib/utils";
 
 const links = [
   { to: "/", label: "Home" },
-  { to: "/blog/what-is-sis", label: "Guide" },
 ];
 
 export function MarketingNav() {
   const { theme, toggle } = useTheme();
   const [open, setOpen] = useState(false);
-  // === YAHAN EDIT KIYA HAI: Modal ko kholne/band karne ka switch (State) banaya ===
-  const [isContactOpen, setIsContactOpen] = useState(false);
+
 
   return (
     <header className="sticky top-0 z-40 w-full border-b border-border/60 bg-background/80 backdrop-blur-xl">
