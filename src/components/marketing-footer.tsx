@@ -31,7 +31,6 @@ export function MarketingFooter() {
           <h4 className="font-display text-sm font-semibold">Company</h4>
           <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
             <li><Link to="/login" className="hover:text-foreground">Sign in</Link></li>
-            <li><Link to="/login" className="hover:text-foreground">Sign in</Link></li>
           </ul>
         </div>
 
