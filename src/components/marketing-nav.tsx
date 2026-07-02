@@ -73,16 +73,6 @@ export function MarketingNav() {
               {l.label}
             </Link>
           ))}
-          {/* === YAHAN EDIT KIYA HAI: Mobile screen vale menu ke andar Contact option joda === */}
-          <button
-            onClick={() => {
-              setOpen(false);
-              setIsContactOpen(true);
-            }}
-            className="text-left rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-accent hover:text-foreground"
-          >
-            Contact
-          </button>
           <Link to="/login" onClick={() => setOpen(false)} className="rounded-lg px-3 py-2 text-sm font-medium">
             Sign in
           </Link>
@@ -91,12 +81,6 @@ export function MarketingNav() {
           </Link>
         </div>
       </div>
-
-      {/* === YAHAN EDIT KIYA HAI: Contact Modal Popup Component rendering === */}
-      <ContactModal
-        isOpen={isContactOpen}
-        onClose={() => setIsContactOpen(false)}
-      />
     </header>
   );
 }
