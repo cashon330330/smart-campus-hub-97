@@ -203,6 +203,24 @@ export type Database = {
           },
         ]
       }
+      students: {
+        Row: {
+          email: string | null
+          id: string
+          name: string | null
+        }
+        Insert: {
+          email?: string | null
+          id: string
+          name?: string | null
+        }
+        Update: {
+          email?: string | null
+          id?: string
+          name?: string | null
+        }
+        Relationships: []
+      }
       user_roles: {
         Row: {
           created_at: string
